@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Junu Shrestha</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(
+          135deg,
+          #ffd600,
+          #ff7a00,
+          #ff0069,
+          #d300c5,
+          #7638fa
+        );
+        color: #fff;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      #container {
+        text-align: center;
+        opacity: 0;
+        transform: translateY(100px);
+        transition: opacity 1s ease, transform 1s ease;
+      }
+
+      #container.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      #container:hover {
+        transform: scale(1.1);
+      }
+
+      #name {
+        color: white;
+        font-weight: 500;
+        font-size: 50px;
+        font-family: "Dancing Script", cursive;
+        margin-top: 30px;
+        margin-bottom: 40px;
+      }
+      #image-container {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto;
+        background: linear-gradient(
+          40deg,
+          #ffd600,
+          #ff7a00,
+          #ff0069,
+          #d300c5,
+          #7638fa
+        );
+        padding: 7px;
+        animation: gradientRotation 3s linear infinite;
+      }
+      @keyframes gradientRotation {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: 100% 100%;
+        }
+      }
+
+      #image {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto;
+
+        transition: box-shadow 0.3s ease-in-out;
+      }
+
+      img {
+        height: 250px;
+        width: 250px;
+        object-fit: cover;
+        border-radius: 6px;
+        box-shadow: 1px 2px 30px var(--main-color);
+      }
+      a:link,
+      :visited,
+      :active {
+        text-decoration: none;
+      }
+      .owner {
+        color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="https://www.instagram.com/roshanxshrestha/" target="_blank">
+      <div id="container">
+        <div id="image-container">
+          <div id="image">
+            <img
+              src="./assets/images/roshanshrestha.jpg"
+              alt="Roshan Shrestha Image"
+            />
+          </div>
+        </div>
+        <div id="name">Roshan Shrestha</div>
+        <a
+          class="owner"
+          href="https://stharoshan.com.np/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Roshan Shrestha</a
+        >
+      </div>
+    </a>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const container = document.getElementById("container");
+        container.classList.add("show");
+      });
+    </script>
+  </body>
+</html>
